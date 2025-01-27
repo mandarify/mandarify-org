@@ -1,0 +1,26 @@
+:root {
+
+   /* ===== NORMALIZE ===== */
+
+   /* Шрифт */
+   --f-family: "Rubik", sans-serif;
+   --f-optical-sizing: auto;
+   --f-weight: 400;
+   --f-style: normal;
+
+   --text-color: rgba(255, 255, 255, 1);
+
+   /* Убирает синий фон объектов которые выделяются */
+   --tap-bg: rgba(0, 0, 0, 0);
+
+   /* Цвет выделенного текста */
+   --selection: rgba(0, 0, 0, 0.2);
+
+   /* ===== NORMALIZE END ===== */
+
+   /* Убирает синию обводку с картинки */
+   --noimage-bg: rgb(189, 189, 189);
+
+   /*  */
+   --site-bg: #0e0e0e;
+}

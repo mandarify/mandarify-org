@@ -1,0 +1,38 @@
+name: Deploy Client Page
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Установка Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22
+
+    # Установка зависимостей и сборка проекта
+    - name: Install dependencies and build
+      run: |
+        cd ./client
+        npm install
+        npm run build
+
+    # Деплой папки dist в ветку client-page
+    - name: Deploy to gh-pages branch
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        publish_dir: ./client/dist
+        destination_branch: gh-pages
+        enable_jekyll: true
+        keep_files: true
